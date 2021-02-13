@@ -8,5 +8,9 @@ exports.PATHS = {
     dest: "./dist/js",
     bundle: "bundle.js",
   },
+  ejs: {
+    src: "./src/ejs/index.ejs",
+    dest: "./dist"
+  }
 
 }
