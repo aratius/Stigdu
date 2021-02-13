@@ -9,3 +9,5 @@
 npm install
 npm start
 ```
+
+mailto: info@aratius.site
