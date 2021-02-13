@@ -1,7 +1,9 @@
+const CONFIG = require("./config")
+
 module.exports = {
-  mode: "production",
-  entry: "./src/index.js",
+  mode: "production",  //or develop
+  entry: CONFIG.PATHS.js.src,
   output: {
-    filename: "bundle.js"
+    filename: CONFIG.PATHS.js.bundle
   }
 }

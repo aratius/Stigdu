@@ -1,14 +1,9 @@
 const gulp = require("gulp")
-const webpackStream = require("webpack-stream")
-const webpack = require("webpack")
+const hub = require("gulp-hub")
 
-const CONFIG = require("./config")
-const webpackConfig = require("./webpack.config")
+const tasks = new hub([
+  "./tasks/bundle.js"
+])
+gulp.registry(tasks)
 
-const bundle = () => {
-  console.log('bundle start')
-  return webpackStream(webpackConfig, webpack)
-  .pipe(gulp.dest(CONFIG.PATHS.js.dest))
-}
-
-gulp.task("default", bundle)
+gulp.task("default", gulp.series(gulp.parallel("bundle")))
