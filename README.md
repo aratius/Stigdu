@@ -10,4 +10,4 @@ npm install
 npm start
 ```
 
-mailto: info@aratius.site
+info@aratius.site
