@@ -5,10 +5,10 @@ const webpack = require("webpack")
 const CONFIG = require("../config")
 const webpackConfig = require("../webpack.config")
 
-const bundle = () => {
-  console.log('bundle start')
-  return webpackStream(webpackConfig, webpack)
+const bundle = (done) => {
+  webpackStream(webpackConfig, webpack)
   .pipe(gulp.dest(CONFIG.PATHS.js.dest))
+  done()
 }
 
 gulp.task("bundle", bundle)
